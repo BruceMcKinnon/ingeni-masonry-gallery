@@ -1,0 +1,26 @@
+.masonry-wrap {
+	overflow:hidden;
+}
+
+.photo_grid {
+	width: 100%;
+	margin: rem-calc(30) 0;
+}
+
+.photo_grid_item, .photo_grid_sizer {
+	width: 100%;
+	height: auto;
+}
+
+.photo_grid_item:nth-of-type(n+4) {
+	display: none;
+}
+
+@media only screen and (min-width: 640px) {
+	.photo_grid_item, .photo_grid_sizer {
+		width: 50%;
+	}
+	.photo_grid_item:nth-of-type(n+4) {
+		display: block;
+	}
+}
