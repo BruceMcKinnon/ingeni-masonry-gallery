@@ -5,6 +5,8 @@
 .photo_grid {
 	width: 100%;
 	margin: rem-calc(30) 0;
+	overflow: visible;
+	padding-bottom: 10vh;
 }
 
 .photo_grid_item, .photo_grid_sizer {
@@ -13,10 +15,13 @@
 }
 
 .photo_grid_item:nth-of-type(n+4) {
-	display: none;
+	/* display: none; */
 }
 
 @media only screen and (min-width: 640px) {
+	.photo_grid {
+		padding-bottom: 0;
+	}
 	.photo_grid_item, .photo_grid_sizer {
 		width: 50%;
 	}

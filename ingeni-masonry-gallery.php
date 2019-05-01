@@ -81,14 +81,17 @@ function ingeni_masonry_gallery_shortcode($atts, $content) {
 
 
 function ingeni_load_masonry() {
-	$dir = plugins_url( 'masonry/', __FILE__ );
+	$dir = plugins_url( '', __FILE__ );
 
 	//Masonry gallery
-	if ( is_singular( 'post' ) ) {
-		wp_enqueue_style( 'ingeni-masonry-css', $dir . 'ingeni-masonry-grid.css' );
+	if ( is_singular( 'post' ) || is_singular( 'page' ) ) {
+		wp_enqueue_style( 'ingeni-masonry-css', $dir . '/ingeni-masonry-gallery.css' );
 
-		wp_register_script( 'masonry_js', $dir .'masonry.pkgd.min.js', false, '4.2', true );
+		wp_register_script( 'masonry_js', $dir .'/masonry/masonry.pkgd.min.js', false, '4.2', true );
 		wp_enqueue_script( 'masonry_js' );
+		
+		wp_register_script( 'ingeni_masonry_js', $dir .'/ingeni-masonry-gallery.js', false, '0.1', true );
+		wp_enqueue_script( 'ingeni_masonry_js' );
 	}
 		
 		
