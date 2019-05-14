@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Ingeni Masonry Carousel
-Version: 2019.01
+Version: 2019.02
 Plugin URI: http://ingeni.net
 Author: Bruce McKinnon - ingeni.net
 Author URI: http://ingeni.net
@@ -28,6 +28,8 @@ Disclaimer:
 Requires : Wordpress 3.x or newer ,PHP 5 +
 
 v2019.01 - Initial version, using https://masonry.desandro.com v4.2.2
+
+v2019.02 - Added imagesLoaded to handle dynamic or slow loading of images 
 
 */
 
@@ -89,7 +91,10 @@ function ingeni_load_masonry() {
 
 		wp_register_script( 'masonry_js', $dir .'/masonry/masonry.pkgd.min.js', false, '4.2', true );
 		wp_enqueue_script( 'masonry_js' );
-		
+
+		wp_register_script( 'imagesloaded_js', $dir .'/masonry/imagesloaded.pkgd.min.js', false, '4.1', true );
+		wp_enqueue_script( 'imagesloaded_js' );
+
 		wp_register_script( 'ingeni_masonry_js', $dir .'/ingeni-masonry-gallery.js', false, '0.1', true );
 		wp_enqueue_script( 'ingeni_masonry_js' );
 	}
