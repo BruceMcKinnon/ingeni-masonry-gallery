@@ -4,7 +4,7 @@ Contributors: Bruce McKinnon
 Tags: gallery, masonry
 Requires at least: 4.8
 Tested up to: 5.1.1
-Stable tag: 2019.02
+Stable tag: 2019.04
 
 Replaces standard Wordpress post galleries with Masonry galleries.
 
@@ -52,3 +52,6 @@ container_class: Extra class that is applied to the container class.
 
 v2019.01 - Initial version
 v2019.02 - Added imagesLoaded to handle dynamic or slow loading of images
+v2019.03 - Added the 'close_grid_container' param. Defaults to 1. Set to zero to keep the gallery in the same grid-container as the test of the post.
+v2019.04 - Removed a top-bottom-30 class from a grid-container. Provides greater individual control via CSS.
+

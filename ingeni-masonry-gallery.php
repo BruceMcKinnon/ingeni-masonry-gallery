@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Ingeni Masonry Carousel
-Version: 2019.03
+Version: 2019.04
 Plugin URI: http://ingeni.net
 Author: Bruce McKinnon - ingeni.net
 Author URI: http://ingeni.net
@@ -33,6 +33,8 @@ v2019.02 - Added imagesLoaded to handle dynamic or slow loading of images
 
 v2019.03 - Added the 'close_grid_container' param. Defaults to 1. Set to zero to keep the
 						gallery in the same grid-container as the test of the post.
+
+v2019.04 - Removed a top-bottom-30 class from a grid-container. Provides greater individual control via CSS.
 
 */
 
@@ -66,7 +68,7 @@ function ingeni_masonry_gallery_shortcode($atts, $content) {
 			$retHtml = '</div></div></div>';
 		}
 		$retHtml .= '<div class="grid-container full '.$params['container_class'].' masonry-wrap"><div class="grid-x grid-margin-x"><div class="cell small-12">';
-		$retHtml .= '<div class="grid-container top-bottom-30"><div class="grid-x grid-padding-x"><div class="cell small-12"><div class="photo_grid"><div class="photo_grid_sizer"></div>';
+		$retHtml .= '<div class="grid-container"><div class="grid-x grid-padding-x"><div class="cell small-12"><div class="photo_grid"><div class="photo_grid_sizer"></div>';
 
 		$imgIds = explode(",",$params['ids']);
 
@@ -80,6 +82,8 @@ function ingeni_masonry_gallery_shortcode($atts, $content) {
 		}
 		$retHtml .= '</div>';
 		$retHtml .= '</div></div></div>';
+		$retHtml .= '</div></div></div>';
+		
 		if ($params['close_grid_container'] > 0) {
 			$retHtml .= '</div></div></div>';
 		}
