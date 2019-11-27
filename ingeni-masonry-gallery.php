@@ -61,7 +61,7 @@ function ingeni_masonry_gallery_shortcode($atts, $content) {
 	), $atts );
 
 
-	if ( ($params['ids'] )
+	if ( $params['ids'] ) {
 		if ($params['close_grid_container'] > 0) {
 			$retHtml = '</div></div></div>';
 		}
